@@ -5,7 +5,8 @@ export class Cuenta {
   #saldo
   // Construir pieza
   // Atributos públicos
-  constructor(cliente, numero, agencia, saldo) {
+  constructor(tipo, cliente, numero, agencia, saldo) {
+    this.tipo = tipo
     this.numero = numero
     this.agencia = agencia
     this.#cliente = cliente
@@ -13,13 +14,24 @@ export class Cuenta {
   }
   // Métodos
   deposito(valor) { // Dato primitivo 
+    if (this.tipo == 'Corriente') {
+      valor = valor * 1.05 // Agregando comisión
+    } else if (this.tipo == 'Ahorro') {
+      valor = valor * 1.02 // Agregando comisión
+    }
     if (valor > 0) 
       this.#saldo += valor
     return this.#saldo
   }
   retiro(valor) {
-    if (valor <= this.#saldo) 
+    if (this.tipo == 'Corriente') {
+      valor = valor * 1.05 // Agregando comisión
+    } else if (this.tipo == 'Ahorro') {
+      valor = valor * 1.02 // Agregando comisión
+    }
+    if (valor <= this.#saldo) {
       this.#saldo -= valor
+    }
     return this.#saldo
   }
   verSaldo() {

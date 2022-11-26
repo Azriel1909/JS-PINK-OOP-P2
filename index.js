@@ -4,7 +4,7 @@ import { Cliente } from './Cliente.js'
 import { Cuenta } from './Cuenta.js'
 
 const cliente1 = new Cliente('Ximena','9909','1234567899')
-const cuentaCliente1 = new Cuenta(cliente1,'1','001',0)
+const cuentaCliente1 = new Cuenta('Corriente',cliente1,'1','001',0)
 
 console.log(`Cuenta de ${cliente1.nombreCliente}:`)
 console.log(cuentaCliente1)
@@ -16,7 +16,7 @@ saldoCliente1 = cuentaCliente1.deposito(5000)
 console.log(`Saldo actual de ${cliente1.nombreCliente}: ${saldoCliente1}`)
 
 const cliente2 = new Cliente('Gerardo', '11011', '1234567811')
-const cuentaCliente2 = new Cuenta(cliente2,'2','002', 0)
+const cuentaCliente2 = new Cuenta('Corriente',cliente2,'2','002', 0)
 
 console.log(`Cuenta de ${cliente2.nombreCliente}:`)
 console.log(cuentaCliente2)
@@ -42,8 +42,15 @@ console.log('\nGESTIÓN DE DATOS ESTÁTICOS')
 console.log(`CANTIDAD DE CUENTAS REGISTRADAS ${Cuenta.cantidadDeCuentas}`)
 
 console.log('\nGESTIÓN DE CUENTAS DE AHORRO')
-const cuentaAhorroCliente1 = new Cuenta(cliente1, '9999', '001', 0)
+const cuentaAhorroCliente1 = new Cuenta('Ahorro', cliente1, '9999', '001', 0)
+const cuentaAhorroCliente2 = new Cuenta('Ahorro', cliente2, '11011', '002', 0)
+
+console.log('\nCUENTA CORRIENTE\n> Aplica comisión.')
+console.log(cuentaCliente1)
+cuentaCliente1.deposito
+console.log(cuentaCliente1.verSaldo())
+
+console.log('\nCUENTA DE AHORRO')
+console.log(cuentaAhorroCliente1)
 cuentaAhorroCliente1.deposito(2050)
-console.log(cuentaAhorroCliente1.verSaldo())
-cuentaAhorroCliente1.retiro(30)
 console.log(cuentaAhorroCliente1.verSaldo())
