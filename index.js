@@ -64,4 +64,9 @@ console.log(cuentaAhorroCliente1.verSaldo())
 cuentaAhorroCliente1.retiro(30)
 console.log(cuentaAhorroCliente1.verSaldo())
 
+const CuentaNominaCliente1 = new CuentaAhorro(cliente1, '010101','001', 200)
+console.log(CuentaNominaCliente1)
+console.log(CuentaNominaCliente1.verSaldo())
+CuentaNominaCliente1.retiro(100)
+console.log(CuentaNominaCliente1.verSaldo())
 
