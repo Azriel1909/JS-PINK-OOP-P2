@@ -1,4 +1,5 @@
 import { Cliente } from './Cliente.js'
+import { Cuenta } from './Cuenta.js'
 import { CuentaAhorro } from './CuentaAhorro.js'
 import { CuentaCorriente } from './CuentaCorriente.js'
 
@@ -54,7 +55,6 @@ console.log(cuentaCliente1.verSaldo())
 cuentaCliente1.retiro(55)
 console.log(cuentaCliente1.verSaldo())
 
-
 console.log('\nCUENTA DE AHORRO')
 console.log(cuentaAhorroCliente1)
 cuentaAhorroCliente1.deposito(2055)
@@ -63,4 +63,5 @@ console.log('RETIRO DE CUENTA')
 console.log(cuentaAhorroCliente1.verSaldo())
 cuentaAhorroCliente1.retiro(30)
 console.log(cuentaAhorroCliente1.verSaldo())
+
 

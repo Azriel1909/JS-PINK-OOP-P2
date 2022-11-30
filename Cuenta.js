@@ -6,6 +6,10 @@ export class Cuenta {
   // Construir pieza
   // Atributos públicos
   constructor(cliente, numero, agencia, saldo) {
+    if (this.constructor == Cuenta) {
+      // Protegemos la clase base Cuenta de que sea instanciada desde el exterior sólo extendida/heredada (CLASE ABSTRACTA)
+      throw new Error('No se debe instanciar objetos de la clase cuenta')
+    }
     this.numero = numero
     this.agencia = agencia
     this.#cliente = cliente
