@@ -6,4 +6,8 @@ export class CuentaCorriente extends Cuenta {
     super(cliente, numero, agencia, 0)
     CuentaCorriente.cantidadDeCuentas++;
   }
+
+  retiro(valor) {
+    super._retiro(valor, 5)
+  }
 }

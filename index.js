@@ -47,10 +47,20 @@ const cuentaAhorroCliente2 = new CuentaAhorro(cliente2, '11011', '002', 0)
 
 console.log('\nCUENTA CORRIENTE\n> Aplica comisión.')
 console.log(cuentaCliente1)
-cuentaCliente1.deposito
+cuentaCliente1.deposito(3050)
 console.log(cuentaCliente1.verSaldo())
+console.log('RETIRO DE CUENTA')
+console.log(cuentaCliente1.verSaldo())
+cuentaCliente1.retiro(55)
+console.log(cuentaCliente1.verSaldo())
+
 
 console.log('\nCUENTA DE AHORRO')
 console.log(cuentaAhorroCliente1)
-cuentaAhorroCliente1.deposito(2050)
+cuentaAhorroCliente1.deposito(2055)
 console.log(cuentaAhorroCliente1.verSaldo())
+console.log('RETIRO DE CUENTA')
+console.log(cuentaAhorroCliente1.verSaldo())
+cuentaAhorroCliente1.retiro(30)
+console.log(cuentaAhorroCliente1.verSaldo())
+
