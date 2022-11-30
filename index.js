@@ -1,10 +1,10 @@
-// import {CuentaCorriente} from './CuentaCorriente.js'
 import { Cliente } from './Cliente.js'
-// import { CuentaAhorro } from './CuentaAhorro.js'
-import { Cuenta } from './Cuenta.js'
+import { CuentaAhorro } from './CuentaAhorro.js'
+import { CuentaCorriente } from './CuentaCorriente.js'
+
 
 const cliente1 = new Cliente('Ximena','9909','1234567899')
-const cuentaCliente1 = new Cuenta('Corriente',cliente1,'1','001',0)
+const cuentaCliente1 = new CuentaCorriente(cliente1,'1','001')
 
 console.log(`Cuenta de ${cliente1.nombreCliente}:`)
 console.log(cuentaCliente1)
@@ -16,7 +16,7 @@ saldoCliente1 = cuentaCliente1.deposito(5000)
 console.log(`Saldo actual de ${cliente1.nombreCliente}: ${saldoCliente1}`)
 
 const cliente2 = new Cliente('Gerardo', '11011', '1234567811')
-const cuentaCliente2 = new Cuenta('Corriente',cliente2,'2','002', 0)
+const cuentaCliente2 = new CuentaCorriente(cliente2,'2','002')
 
 console.log(`Cuenta de ${cliente2.nombreCliente}:`)
 console.log(cuentaCliente2)
@@ -39,11 +39,11 @@ console.log('\nGESTIÓN PRIVADA DE DATOS')
 console.log(cuentaCliente1.cliente)
 console.log(cuentaCliente2.cliente)
 console.log('\nGESTIÓN DE DATOS ESTÁTICOS')
-console.log(`CANTIDAD DE CUENTAS REGISTRADAS ${Cuenta.cantidadDeCuentas}`)
+console.log(`CANTIDAD DE CUENTAS REGISTRADAS`)
 
 console.log('\nGESTIÓN DE CUENTAS DE AHORRO')
-const cuentaAhorroCliente1 = new Cuenta('Ahorro', cliente1, '9999', '001', 0)
-const cuentaAhorroCliente2 = new Cuenta('Ahorro', cliente2, '11011', '002', 0)
+const cuentaAhorroCliente1 = new CuentaAhorro(cliente1, '9999', '001', 0)
+const cuentaAhorroCliente2 = new CuentaAhorro(cliente2, '11011', '002', 0)
 
 console.log('\nCUENTA CORRIENTE\n> Aplica comisión.')
 console.log(cuentaCliente1)

@@ -5,8 +5,7 @@ export class Cuenta {
   #saldo
   // Construir pieza
   // Atributos públicos
-  constructor(tipo, cliente, numero, agencia, saldo) {
-    this.tipo = tipo
+  constructor(cliente, numero, agencia, saldo) {
     this.numero = numero
     this.agencia = agencia
     this.#cliente = cliente
@@ -14,21 +13,21 @@ export class Cuenta {
   }
   // Métodos
   deposito(valor) { // Dato primitivo 
-    if (this.tipo == 'Corriente') {
-      valor = valor * 1.05 // Agregando comisión
-    } else if (this.tipo == 'Ahorro') {
-      valor = valor * 1.02 // Agregando comisión
-    }
+    // if (this.tipo == 'Corriente') {
+    //   valor = valor * 1.05 // Agregando comisión
+    // } else if (this.tipo == 'Ahorro') {
+    //   valor = valor * 1.02 // Agregando comisión
+    // }
     if (valor > 0) 
       this.#saldo += valor
     return this.#saldo
   }
   retiro(valor) {
-    if (this.tipo == 'Corriente') {
-      valor = valor * 1.05 // Agregando comisión
-    } else if (this.tipo == 'Ahorro') {
-      valor = valor * 1.02 // Agregando comisión
-    }
+    // if (this.tipo == 'Corriente') {
+    //   valor = valor * 1.05 // Agregando comisión
+    // } else if (this.tipo == 'Ahorro') {
+    //   valor = valor * 1.02 // Agregando comisión
+    // }
     if (valor <= this.#saldo) {
       this.#saldo -= valor
     }
@@ -42,3 +41,10 @@ export class Cuenta {
     cuentaDestino.deposito(valor) 
   }
 }
+
+// HERENCIA
+/**
+ * Trata que desde un punto padre a punto hijo, se transfieran sus propiedades.
+ * Que una clase pueda tomar toda la funcionalidad de otra clase, a partir de que se defina como hija o que se extienda.
+ * Extender la clase con: "super"
+ */
