@@ -2,6 +2,7 @@ export class Cliente {
   nombreCliente 
   dniCliente
   rutCliente
+  // autenticable // Puede ser un atributo
   #clave
   // CONSTRUCTOR
   // Es la función que se ejecuta toda vez que se genera una instancia.

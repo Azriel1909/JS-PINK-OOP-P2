@@ -95,5 +95,14 @@ console.log('EMPLEADO 3' + director1.mostrarBono())
 console.log('\nGESTIÓN DE CLAVES')
 
 console.log(SistemaDeAutenticacion.login(empleado1, '12345'))
+console.log(SistemaDeAutenticacion.login(gerente1, '56789'))
+console.log(SistemaDeAutenticacion.login(director1, '101112'))
+
 
 // INTERFACES - PUNTO EN DONDE EXISTE COMUNICACIÓN COMO (CLAVE)
+
+// DUCK TYPING
+/**Tipado de pato - no importa que sea un pato o no, sino que se comporte como uno.
+ * Tipado en JS, no tan obligados de colocar el tipo de dato.
+ * No existe fuerte Tipado en JS
+*/
